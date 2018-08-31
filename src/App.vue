@@ -1,31 +1,55 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+	<div id="app">
+		<Toolbar />
+		<Sidebar />
+		<Main />
+	</div>
 </template>
 
+<script>
+import Toolbar from "@/components/Toolbar";
+import Main from "@/components/Main";
+import Sidebar from "@/components/Sidebar";
+
+export default {
+	components: {
+		Toolbar,
+		Main,
+		Sidebar
+	}
+};
+</script>
+
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+body {
+	background-color: #fafafa;
 }
-#nav {
-  padding: 30px;
+.divider {
+	margin: 8px 0 16px;
+	width: 10%;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.titulo-carta {
+	font-size: 32px;
+	font-weight: bold;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.boton-opciones {
+	display: inline-block;
+	margin: 0 2px;
+}
+.opciones {
+	text-align: right;
+}
+.opciones a {
+	cursor: pointer;
+}
+.volver {
+	color: #0d47a1 !important;
+}
+.eliminar {
+	color: #b71c1c !important;
+}
+.guardar {
+	color: #689f38 !important;
 }
 </style>
